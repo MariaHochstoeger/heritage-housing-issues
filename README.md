@@ -1,12 +1,15 @@
-# ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
-## Template Instructions
+# Heritage Housing Price Predictor
 
 Welcome,
 
-This is the Code Institute student template for the Heritage Housing project option in Predictive Analytics. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
+This is the Heritage Housing Price Predictor which predicts property prices within the region of Ames, Iowa.
 
-You can safely delete the Template Instructions section of this README.md file,  and modify the remaining paragraphs for your own project. Please do read the Template Instructions at least once, though! It contains some important information about the IDE and the extensions we use.
+## Table Of Contents
+
+- [Business Requirements](#business-requirements)
+
+
+
 
 ## How to use this repo
 
@@ -42,10 +45,19 @@ To log into the Heroku toolbelt CLI:
 
 You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with *Regenerate API Key*.
 
+## Business Requirements
+
+The client has received an inheritance from a deceased great-grandfather located in Ames, Iowa, and is looking for help in maximising the sales price for the inherited properties.
+
+Although the client has an excellent understanding of property prices in her own state and residential area, she fears that basing her estimates for property worth on her current knowledge might lead to inaccurate appraisals. What makes a house desirable and valuable where she comes from might not be the same in Ames, Iowa. She found a public dataset with house prices for Ames, Iowa, and provided that.
+
+* Business Requirement 1 - The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects data visualisations of the correlated variables against the sale price to show that.
+* Business Requirement 2 - The client is interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa.
+
 ## Dataset Content
 
-* The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace.
-* The dataset has almost 1.5 thousand rows and represents housing records from Ames, Iowa, indicating house profile (Floor Area, Basement, Garage, Kitchen, Lot, Porch, Wood Deck, Year Built) and its respective sale price for houses built between 1872 and 2010.
+* The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data).
+* The dataset has almost 1500 rows and represents housing records from Ames, Iowa, indicating house profile (Floor Area, Basement, Garage, Kitchen, Lot, Porch, Wood Deck, Year Built) and its respective sale price for houses built between 1872 and 2010.
 
 |Variable|Meaning|Units|
 |:----|:----|:----|
@@ -74,35 +86,105 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 |YearRemodAdd|Remodel date (same as construction date if no remodelling or additions)|1950 - 2010|
 |SalePrice|Sale Price|34900 - 755000|
 
-## Business Requirements
+## CRISP-DM
 
-As a good friend, you are requested by your friend, who has received an inheritance from a deceased great-grandfather located in Ames, Iowa, to  help in maximising the sales price for the inherited properties.
+CRISP-DM (Cross-Industry Standard Process for Data Mining) is a widely used data mining methodology that provides a structured approach to planning and executing data analysis projects. It consists of six phases:
 
-Although your friend has an excellent understanding of property prices in her own state and residential area, she fears that basing her estimates for property worth on her current knowledge might lead to inaccurate appraisals. What makes a house desirable and valuable where she comes from might not be the same in Ames, Iowa. She found a public dataset with house prices for Ames, Iowa, and will provide you with that.
+1. **Business Understanding**: Define the project objectives and requirements from a business perspective.
+2. **Data Understanding**: Collect, explore, and understand the data to identify quality issues and initial insights.
+3. **Data Preparation**: Clean, transform, and structure the data for analysis.
+4. **Modeling**: Apply various modeling techniques and select the best model based on the data.
+5. **Evaluation**: Assess the model's performance to ensure it meets the business objectives.
+6. **Deployment**: Implement the model in a real-world environment for decision-making or other applications.
 
-* 1 - The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects data visualisations of the correlated variables against the sale price to show that.
-* 2 - The client is interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa.
+CRISP-DM is flexible, iterative, and helps ensure that data mining projects are aligned with business goals.
 
 ## Hypothesis and how to validate?
 
-* List here your project hypothesis(es) and how you envision validating it (them).
+* Hypothesis 1: The higher the overall quality ("OverallQual") of a property, the higher the sale price.
+    - How to validate: by performing a correlation study on the dataset
+    - The correlation study confirms this hypothesis
+
+* Hypothesis 2: The higher the size of a property ("TotalBsmtSF"), the higher the sale price.
+    - How to validate: by performing a correlation study on the dataset
+    - The correlation study confirms this hypothesis
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
 
 * List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
 
+* Business Requirement 1 - The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects data visualisations of the correlated variables against the sale price to show that.
+    - Data Visualization and Correlation Study:
+        - Data is collected and inspected from kaggle
+        - Using Pearson and Spearman method, correlations are explored
+        - Data is visualized to improve ease of use and help make quick deductions about which attributes have the most effect on sale price
+
+* Business Requirement 2 - The client is interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa.
+    - Regression Study and Data Analysis
+        - In order to predict a sale price for properties in Ames, Iowa, a regression model is built, using "SalePrice" as target value
+        - The best regression model is chosen
+        - A dashboard for easy customer use is created
+
 ## ML Business Case
 
-* In the previous bullet, you potentially visualised an ML task to answer a business requirement. You should frame the business case using the method we covered in the course.
+1. What are the business requirements?
+* The ML model shall predict sale price for a property in Ames, Iowa.
+
+2. Is there any business requirement that can be answered with conventional data analysis?
+* Yes, BR1 can be answered using conventional data analysis.
+
+3. Does the client need a dashboard or an API endpoint?
+* Yes, the client needs a dashboard for visualization.
+
+4. What does the client consider as a successful project outcome?
+* The client wants to know how house attributes correlate to sale price. A visualization shall show that. Further, the client shall, by providing limited but relevant input, be able to predict the sale price of the subject property. In the particular use case, the client wants to predict the sale price of inherited property.
+
+5. Can you break down the project into Epics and User Stories?
+* Information gathering and data collection.
+* Data visualization, cleaning, and preparation.
+* Model training, optimization and validation.
+* Dashboard planning, designing, and development.
+* Dashboard deployment and release.
+
+6. Ethical or Privacy concerns?
+* None found in the publicy available dataset
+
+7. Does the data suggest a particular model?
+* The data and the business requirements suggest a regression model
+
+8. What are the model's inputs and intended outputs?
+* The inputs are select, relevant house attributes. The output is the predicted sale price.
+
+9. What are the criteria for the performance goal of the predictions?
+* The success metrics for the model are R2 scores of at least 0.8 for Train and Test Set
+
+10. How will the client benefit?
+* The client will know the adequate sale price for her properties and thus be supported in her expectation management, and the decision whether an offer is adequate or not
 
 ## Dashboard Design
 
 * List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other items that your dashboard library supports.
 * Eventually, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project you were confident you would use a given plot to display an insight but eventually you needed to use another plot type)
 
+The dashboard has five pages:
+
+* Page 1 shows the Business Requirements and describes the dataset to answer the Business Requirements
+* Page 2 answers the first Business Requirement: visualizations of how individual house attributes relate to the target variable of SalePrice.
+    * A table shows a dataset sample
+    * Pearson and Spearman correlation plots
+    * PPS analysis
+* Page 3 answers the second Business Requirement: what should be the sale price of a given property.
+    * Input fields for select property features
+    * Display field for predicted sale price
+* Page 4 shows the underlying hypothesis and validation
+* Page 5 explains the ML Model
+    * Information on the ML pipeline used to train the model
+    * Demonstration of feature importance
+    * Review of the pipeline performance
+
 ## Unfixed Bugs
 
-* You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not valid reason to leave bugs unfixed.
+* Not an unfixed bug but not the ideal solution: for an unknown reason, the packages from the requirements.txt file seem not to be recognized in the individual jupyter_notebooks. The initial instructions in the CI template were followed. The topic was discussed and tried to solve at length with my mentor. Tutor support was contacted on the issue. The friendly tutor advised, that he had encountered the same issue in his own projects and not found a solution either. He advised to install the necessary packages each time in the individual notebook and not get held up by that topic further - which I did.
 
 ## Deployment
 
