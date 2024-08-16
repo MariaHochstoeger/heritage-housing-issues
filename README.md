@@ -128,16 +128,18 @@ CRISP-DM is flexible, iterative, and helps ensure that data mining projects are 
 ## ML Business Case
 
 1. What are the business requirements?
-* The ML model shall predict sale price for a property in Ames, Iowa.
+* The client is interested in discovering how house attributes correlate with sale prices. Therefore, the client expects data visualizations of the correlated variables against the sale price.
+* The client is interested in predicting the house sale prices from her 4 inherited houses, and any other house in Ames, Iowa.
 
 2. Is there any business requirement that can be answered with conventional data analysis?
-* Yes, BR1 can be answered using conventional data analysis.
+* Yes, we can use conventional data analysis to investigate how house attributes are correlated with the sale prices.
 
 3. Does the client need a dashboard or an API endpoint?
-* Yes, the client needs a dashboard for visualization.
+* The client needs a dashboard
 
 4. What does the client consider as a successful project outcome?
-* The client wants to know how house attributes correlate to sale price. A visualization shall show that. Further, the client shall, by providing limited but relevant input, be able to predict the sale price of the subject property. In the particular use case, the client wants to predict the sale price of inherited property.
+* A study showing the most relevant variables correlated to sale price.
+* Also, a capability to predict the sale price for the 4 inherited houses, as well as any other house in Ames, Iowa.
 
 5. Can you break down the project into Epics and User Stories?
 * Information gathering and data collection.
@@ -147,19 +149,19 @@ CRISP-DM is flexible, iterative, and helps ensure that data mining projects are 
 * Dashboard deployment and release.
 
 6. Ethical or Privacy concerns?
-* None found in the publicy available dataset
+* No. The client found a public dataset.
 
 7. Does the data suggest a particular model?
-* The data and the business requirements suggest a regression model
+* The data suggests a regressor where the target is the sale price.
 
 8. What are the model's inputs and intended outputs?
-* The inputs are select, relevant house attributes. The output is the predicted sale price.
+* The inputs are house attribute information and the output is the predicted sale price.
 
 9. What are the criteria for the performance goal of the predictions?
-* The success metrics for the model are R2 scores of at least 0.8 for Train and Test Set
+* We agreed with the client an R2 score of at least 0.75 on the train set as well as on the test set.
 
 10. How will the client benefit?
-* The client will know the adequate sale price for her properties and thus be supported in her expectation management, and the decision whether an offer is adequate or not
+* The client will maximize the sales price for the inherited properties.
 
 ## Dashboard Design
 
