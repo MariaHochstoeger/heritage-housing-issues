@@ -12,17 +12,17 @@ def page_sale_price_analysis_body():
 
     # load data
     df = load_house_prices_data()
-    # The variable most strongly correlated with Sale Price/target
-    vars_to_study = ['OverallQual', 'GrLivArea',
-                     'GarageArea', 'TotalBsmtSF', 'YearBuilt', '1stFlrSF']
+    # The variables most strongly correlated with Sale Price/target
+    vars_to_study = ['1stFlrSF', 'GarageArea', 'GarageYrBlt',
+                        'GrLivArea', 'OverallQual', 'TotalBsmtSF',
+                        'YearBuilt']
 
     st.write("### Property Sale Price Analysis")
     st.success(
-        f"* The client is interested in understanding the correlation "
-        f" between a property's attributes/features and the sale price."
-        f" Therefore, the client expects data visualization of the correlated"
-        f" variables against the sale prices for illustration "
-        f" (Business Requirement 1), \n"
+        f"* The client is interested in discovering how the house attributes "
+        f" correlate with the sale price. Therefore, the client expects data "
+        f" visualisations of the correlated variables against the sale price "
+        f" to show that. (Business Requirement 1). \n"
     )
 
     # inspect data
@@ -74,6 +74,8 @@ def page_sale_price_analysis_body():
         f" which have a linear correlation with the Sale Price "
         f" of more than 0.6. These variables are then plotted "
         f" separately in a bar plot.")
+
+
 
     if st.checkbox("Pearson Correlation"):
         calc_display_pearson_corr_heat(df)

@@ -7,31 +7,15 @@ This is the Heritage Housing Price Predictor which predicts property prices with
 ## Table Of Contents
 
 - [Business Requirements](#business-requirements)
+- [Dataset Content](#dataset-content)
+- [CRISP-DM](#crisp-dm)
+- [Hypothesis](#Hypothesis-and-how-to-validate)
+- [Map Business Requirements](#map-business-requirements)
+- [ML Business Case](#ml-business-case)
 
 
 
 
-## How to use this repo
-
-1. Use this template to create your GitHub project repo
-
-2. Log into the cloud-based IDE with your GitHub account.
-
-3. On your Dashboard, click on the Create button
-
-4. Paste in the URL you copied from GitHub earlier
-
-5. Click Create
-
-6. Wait for the workspace to open. This can take a few minutes.
-
-7. Open a new terminal and `pip3 install -r requirements.txt`
-
-11. Open the jupyter_notebooks directory and click on the notebook you want to open.
-
-12. Click the kernel button and choose Python Environments.
-
-Note that the kernel says Python 3.8.18 as it inherits from the workspace so it will be Python-3.8.18 as installed by our template. To confirm this you can use `! python --version` in a notebook code cell.
 
 ## Cloud IDE Reminders
 
@@ -109,7 +93,7 @@ CRISP-DM is flexible, iterative, and helps ensure that data mining projects are 
     - How to validate: by performing a correlation study on the dataset
     - The correlation study confirms this hypothesis
 
-## The rationale to map the business requirements to the Data Visualisations and ML tasks
+## Map Business Requirements
 
 * List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
 
