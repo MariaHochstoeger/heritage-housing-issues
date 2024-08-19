@@ -41,7 +41,7 @@ def page_predict_price_ml_body():
         f" **meet the project requirement** with an R2 Score of 0.75 or "
         f" better on "
         f" both train and test sets. The model identified the four most "
-        f" important features necessary to acchieve the best predictive "
+        f" important features necessary to achieve the best predictive "
         f" power. ")
     st.write("---")
 

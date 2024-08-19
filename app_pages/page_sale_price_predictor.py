@@ -27,11 +27,9 @@ def page_sale_price_predictor_body():
 
     st.write("### Sale Price Predictor Interface")
     st.success(
-        f"* The client is interested in predicting the potential sale "
-        f" prices"
-        f" for properties in Ames, Iowa, and specifically, she wants to"
-        f" determine a potential value for the properties she inherited "
-        f" (Business Requirement 2). \n"
+        f"* The client is interested in predicting the house sale price "
+        f" from her four inherited houses and any other house in Ames, "
+        f" Iowa. (Business Requirement 2). \n"
     )
     st.info(
         f"The price prediction will be based on four "
@@ -43,9 +41,7 @@ def page_sale_price_predictor_body():
         f" identified as most correlated in the initial data analysis. This "
         f" is because the model will carry out more complex analysis on the "
         f" variables behind the scenes and identify the best variables to use"
-        f" for the prediction of the Sale Price. \n\n More information on the "
-        f" machine learning model and feature importance can be found on the "
-        f" **ML: Price Prediction** page. \n\n"
+        f" for the prediction of the Sale Price. \n\n"
         f"**Information on categorical features used in the prediction**\n\n"
         f"* Overall Quality: 1 - Very Poor to 10 - Very Excellent.\n\n"
         f"All three numerical features are measured in squarefeet."
@@ -56,7 +52,7 @@ def page_sale_price_predictor_body():
     X_live = DrawInputsWidgets()
 
     # predict on live data
-    if st.button("Run Predictive Analysis"):
+    if st.button("Predict House Price"):
         predict_sale_price(X_live, sale_price_features, sale_price_pipe)
 
     st.write("---")
@@ -68,7 +64,7 @@ def page_sale_price_predictor_body():
     st.write("* Features of Inherited Homes")
     st.write(in_df)
 
-    if st.button("Run Prediction on Inherited Homes"):
+    if st.button("Predict Inherited House Price"):
         inherited_price_prediction = predict_sale_price(
             in_df, sale_price_features, sale_price_pipe)
         total_value = inherited_price_prediction.sum()
