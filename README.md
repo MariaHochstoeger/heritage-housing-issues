@@ -12,8 +12,12 @@ This is the Heritage Housing Price Predictor which predicts property prices with
 - [Hypothesis](#Hypothesis-and-how-to-validate)
 - [Map Business Requirements](#map-business-requirements)
 - [ML Business Case](#ml-business-case)
-
-
+- [Dashboard Design](#dashboard-design)
+- [Unfixed Bugs](#unfixed-bugs)
+- [Deployment](#deployment)
+- [Main Data Analysis and Machine Learning Libraries](#main-data-analysis-and-machine-learning-libraries)
+- [Credits](#credits)
+- [Acknowledgements](#acknowledgements)
 
 
 
@@ -95,7 +99,7 @@ CRISP-DM is flexible, iterative, and helps ensure that data mining projects are 
 
 ## Map Business Requirements
 
-* List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
+* A list of all business requirements and a rationale to map them to the Data Visualisations and ML tasks.
 
 * Business Requirement 1 - The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects data visualisations of the correlated variables against the sale price to show that.
     - Data Visualization and Correlation Study:
@@ -154,23 +158,26 @@ CRISP-DM is flexible, iterative, and helps ensure that data mining projects are 
 
 The dashboard has five pages:
 
-* Page 1 shows the Business Requirements and describes the dataset to answer the Business Requirements
-* Page 2 answers the first Business Requirement: visualizations of how individual house attributes relate to the target variable of SalePrice.
-    * A table shows a dataset sample
-    * Pearson and Spearman correlation plots
-    * PPS analysis
-* Page 3 answers the second Business Requirement: what should be the sale price of a given property.
-    * Input fields for select property features
-    * Display field for predicted sale price
-* Page 4 shows the underlying hypothesis and validation
-* Page 5 explains the ML Model
-    * Information on the ML pipeline used to train the model
-    * Demonstration of feature importance
-    * Review of the pipeline performance
+* Page 1, **Quick Project Summary**, shows a short summary of the project, its purpose and motivation. It explains terminology used in the project. The first page list the Business Requirements and describes the dataset to answer the Business Requirements
+* Page 2, **Sale Price Correlation Analysis**, answers the first Business Requirement: visualizations of how individual house attributes relate to the target variable of SalePrice. Before each checkbox, a text box describes the next section.
+    * Upon clicking a checkbox, a table shows a dataset sample
+    * Upon clicking respective checkboxes, Pearson and Spearman correlation plots are displayed, as well as bar plots of the most important variables
+    * Upon clicking a checkbox, correlation plots between select variables and the target variable SalePrice are displayed
+    * Upon clicking a checkbox, a PPS heatmap is displayed
+* Page 3, **Sale Price Predictor**, answers the second Business Requirement: what should be the sale price of a given property. A short text explains why certain features were chosen.
+    * Input fields for select property features, which turned out to be the most relevant ones, are displayed
+    * "Predict House Price" button, and display field for predicted sale price
+    * Overview table of the four inherited properties of the client
+    * "Predict Inherited House Price" button, and display field for predicted sale prices, as well as a sum of all four house sale prices
+* Page 4, **Project Hypothesis and Validation**, shows the underlying hypotheses and validation
+* Page 5, **ML: Price Prediction**, explains the ML Model
+    * Information on the ML pipeline used to train the model, and the ML Pipeline are displayed
+    * Display of the most important features for the model
+    * Pipeline performance and performance plots for the Train Set and the Test Set are displayed
 
 ## Unfixed Bugs
 
-* Not an unfixed bug but not the ideal solution: for an unknown reason, the packages from the requirements.txt file seem not to be recognized in the individual jupyter_notebooks. The initial instructions in the CI template were followed. The topic was discussed and tried to solve at length with my mentor. Tutor support was contacted on the issue. The friendly tutor advised, that he had encountered the same issue in his own projects and not found a solution either. He advised to install the necessary packages each time in the individual notebook and not get held up by that topic further - which I did.
+* Not an unfixed bug but not the ideal solution: for an unknown reason, the packages from the requirements.txt file seem not to be recognized in the individual jupyter_notebooks. The initial instructions in the CI template were followed. The topic was discussed and tried to be solved at length with my mentor. Tutor support was contacted on the issue. The friendly tutor advised that he had encountered the same issue in his own projects and not found a solution either. He advised to install the necessary packages each time in the individual notebook and not get held up by that topic further - which I did. Still, when opening the IDE, I always used the command "pip3 install -r requirements.txt", to try to re-install the packages. Then, in the Jupyter Notebooks, I installed individual packages again, as necessary.
 
 ## Deployment
 
@@ -189,26 +196,25 @@ The dashboard has five pages:
 
 ## Main Data Analysis and Machine Learning Libraries
 
-* Here you should list the libraries you used in the project and provide example(s) of how you used these libraries.
+* Main Data Analysis Libraries:
+    * NumPy: Fundamental package for numerical computing in Python. It provides support for large multidimensional arrays and matrices.
+    * Pandas: Essential for data manipulation and analysis, particularly for handling tabular data in dataframes.
+    * Matplotlib: A plotting library used to create static, animated, and interactive visualizations.
+    * Seaborn: Built on Matplotlib, it provides a high-level interface for drawing attractive statistical graphics.
+    * Plotly: A graphing library that makes interactive, publication-quality graphs online.
+    * ydata-profiling: A tool for creating detailed data profiles (previously known as pandas-profiling).
+* Machine Learning Libraries:
+    * Scikit-learn: A comprehensive library for machine learning in Python, offering tools for classification, regression, clustering, and dimensionality reduction.
+    * XGBoost: An optimized gradient boosting framework designed for speed and performance.
+* Feature Engineering and Pipeline Libraries:
+    * Feature-engine: Used for feature engineering tasks like imputation, encoding, discretization, and more.
 
 ## Credits
 
-* In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism.
-* You can break the credits section up into Content and Media, depending on what you have included in your project.
+* The Code Institute Walkthrough Project "Churnometer" was relied on heavily for the project structure (jupyter notebooks, pages), as well as custom functions and code.
+* User roman_ci for helping me out on Slack when I was stuck with my project.
 
-### Content
+## Acknowledgements
 
-* The text for the Home page was taken from Wikipedia Article A
-* Instructions on how to implement form validation on the Sign-Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-* The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
-
-### Media
-
-* The photos used on the home and sign-up page are from This Open Source site
-* The images used for the gallery page were taken from this other open-source site
-
-## Acknowledgements (optional)
-
-
-* In case you would like to thank the people that provided support through this project.
+* I would like to thank myself for not giving up and putting in a lot of hours into this project, while working a demanding more-than-full-time job
 

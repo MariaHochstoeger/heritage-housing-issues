@@ -116,7 +116,7 @@ def page_sale_price_analysis_body():
         correlation_to_sale_price_hist_scat(df, vars_to_study)
 
     st.info(
-        f"*** Heatmap and Barplot: Predictive Power Score (PPS) ***  \n\n"
+        f"*** Heatmap: Predictive Power Score (PPS) ***  \n\n"
         f" The PPS detects linear or non-linear relationships "
         f"between two variables.\n"
         f"The score ranges from 0 (no predictive power) to 1 "
@@ -189,11 +189,6 @@ def calc_display_pps_matrix(df):
     pps_topscores = pps_matrix.iloc[19].sort_values(
         key=abs, ascending=False)[1:6]
 
-    fig, axes = plt.subplots(figsize=(6, 3))
-    axes = plt.bar(x=pps_topscores.index, height=pps_topscores)
-    plt.xticks(rotation=90)
-    plt.title("Predictive Power Score for Sale Price", fontsize=15, y=1.05)
-    st.pyplot(fig)
 
 
 def heatmap_corr(df, threshold, figsize=(20, 12), font_annot=8):
