@@ -4,6 +4,8 @@ Welcome,
 
 This is the Heritage Housing Price Predictor which predicts property prices within the region of Ames, Iowa.
 
+The live app can be found [here](https://heritage-housing-mh-871035578e64.herokuapp.com/).
+
 ## Table Of Contents
 
 - [Business Requirements](#business-requirements)
@@ -18,20 +20,6 @@ This is the Heritage Housing Price Predictor which predicts property prices with
 - [Main Data Analysis and Machine Learning Libraries](#main-data-analysis-and-machine-learning-libraries)
 - [Credits](#credits)
 - [Acknowledgements](#acknowledgements)
-
-
-
-## Cloud IDE Reminders
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In your Cloud IDE, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with *Regenerate API Key*.
 
 ## Business Requirements
 
@@ -177,22 +165,29 @@ The dashboard has five pages:
 
 ## Unfixed Bugs
 
-* Not an unfixed bug but not the ideal solution: for an unknown reason, the packages from the requirements.txt file seem not to be recognized in the individual jupyter_notebooks. The initial instructions in the CI template were followed. The topic was discussed and tried to be solved at length with my mentor. Tutor support was contacted on the issue. The friendly tutor advised that he had encountered the same issue in his own projects and not found a solution either. He advised to install the necessary packages each time in the individual notebook and not get held up by that topic further - which I did. Still, when opening the IDE, I always used the command "pip3 install -r requirements.txt", to try to re-install the packages. Then, in the Jupyter Notebooks, I installed individual packages again, as necessary.
+* Not an unfixed bug but not the ideal solution: for an unknown reason, the packages from the requirements.txt file seem not to be recognized in the individual jupyter_notebooks. The initial instructions in the CI template were followed. The topic was discussed and tried to be solved at length with my mentor, unsuccessfully. Tutor support was contacted on the issue. The friendly tutor advised that he had encountered the same issue in his own projects and not found a solution either. He advised to install the necessary packages each time in the individual notebook and not get held up by that topic further - which I did. So in summary, when opening the IDE, I always used the command "pip3 install -r requirements.txt", to try to re-install the packages. Then, in the Jupyter Notebooks, I installed individual packages again, as necessary.
 
 ## Deployment
 
+### GitHub and GitPod
+
+The repository was created on GitHub.
+
+The code was edited in GitPod.
+- Changes in the course of the coding, as well as the final code and readme, were done in GitPod and then pushed to GitHub using the sequence: "git add ." --> "git commit -m "..."" --> "git push"
+
 ### Heroku
 
-* The App live link is: <https://YOUR_APP_NAME.herokuapp.com/>
-* Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
-* The project was deployed to Heroku using the following steps.
+This site was deployed on Heroku:
+- In Heroku, on my dashboard, I clicked "New" and then "Create new app"
+- I named the app and set the region to "Europe", clicked "Create app"
+- In the deploy tab, selected "GitHub" as deployment method. Searched for my project and connected the app to it.
+- Deployed by choosing "Manual deploy".
 
-1. Log in to Heroku and create an App
-2. At the Deploy tab, select GitHub as the deployment method.
-3. Select your repository name and click Search. Once it is found, click Connect.
-4. Select the branch you want to deploy, then click Deploy Branch.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button Open App on the top of the page to access your App.
-6. If the slug size is too large then add large files not required for the app to the .slugignore file.
+* The App live link is: <https://heritage-housing-mh-871035578e64.herokuapp.com/>
+* Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version by:
+    * Logging into the Heroku CLI with username and API Key
+    * Running the command: heroku stack:set heroku-20 -a *my app name*
 
 ## Main Data Analysis and Machine Learning Libraries
 
@@ -212,9 +207,14 @@ The dashboard has five pages:
 ## Credits
 
 * The Code Institute Walkthrough Project "Churnometer" was relied on heavily for the project structure (jupyter notebooks, pages), as well as custom functions and code.
-* User roman_ci for helping me out on Slack when I was stuck with my project.
+* Roman Rakic, user @roman_ci on Slack, for helping me out a lot on Slack when I was stuck with my project - multiple times. So helpful, highly appreciated.
+* I turned to various other students' previous projects for support and inspiration:
+    * [annacakes281](https://github.com/annacakes281/property-price-predictor/blob/main/README.md)
+    * [URiem](https://github.com/URiem/heritage-housing-PP5/blob/main/README.md)
+    * [meija1](https://github.com/meija1/heritage-housing-issues/blob/main/README.md)
+    * [faridjos](https://github.com/faridjos/milestone-project-heritage-housing-issues/blob/main/README.md)
 
 ## Acknowledgements
 
-* I would like to thank myself for not giving up and putting in a lot of hours into this project, while working a demanding more-than-full-time job
+* I would like to thank myself for not giving up and putting in a lot of hours into this project, while working a demanding more-than-full-time job and feeling, at times, that I would never finish.
 
